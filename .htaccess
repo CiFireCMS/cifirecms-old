@@ -1,0 +1,23 @@
+RewriteBase /
+RewriteEngine On
+	
+#--- BEGIN force URL
+
+#- https to http | non-www to www
+# RewriteCond %{HTTPS} on [OR]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+# RewriteRule ^ http://www.%1%{REQUEST_URI} [L,NE,R=301]
+
+#- http to https  |  non-www to www
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+# RewriteRule ^ https://www.%1%{REQUEST_URI} [L,NE,R=301]
+
+#--- END force URL
+
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]

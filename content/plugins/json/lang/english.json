@@ -1,0 +1,25 @@
+{
+  "button" :
+  {
+	"yes"	 : "Yes",
+	"no"     : "No",
+	"save"   : "Save",
+	"submit" : "Submit",
+	"update" : "Update",
+	"delete" : "Delete",
+	"cancel" : "Cancel"
+  },
+  
+  "modal":
+  {
+	"delete_title"   : "Confirmation Deletion",
+	"delete_content" : "Are you sure want to delete this data ?"
+  },
+  
+  "message":
+  {
+	"add_success"   : "Data has been successfully added",
+	"update_success": "Data has been successfully updated",
+	"delete_success": "Data has been successfully deleted"
+  }
+}
